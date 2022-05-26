@@ -20,6 +20,8 @@ class ListaProductosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tablaProductos.register(UINib(nibName: "CeldaProductoTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
+        
         tablaProductos.delegate = self
         tablaProductos.dataSource = self
         
@@ -52,13 +54,21 @@ extension ListaProductosViewController: UITableViewDelegate, UITableViewDataSour
         return productosTabla.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tablaProductos.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
-        celda.textLabel?.text = productosTabla[indexPath.row].nombre
-        celda.detailTextLabel?.text = "\(productosTabla[indexPath.row].precioRegular)"
-        celda.imageView?.loadFrom(URLAddress: "\(productosTabla[indexPath.row].urlImagenes[0])")
-//        celda.imageView?.image = UIImage(systemName: "note")
+        let celda = tablaProductos.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! CeldaProductoTableViewCell
+        celda.tituloProducto.text = productosTabla[indexPath.row].nombre
+        celda.imagenProducto.loadFrom(URLAddress: productosTabla[indexPath.row].urlImagenes[0])
+        celda.precioProducto.text = "Precio: S\(productosTabla[indexPath.row].precioRegular)"
+        celda.categoriaProducto.text = "Categoria: \(productosTabla[indexPath.row].codigoCategoria)"
         return celda
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     
@@ -80,14 +90,3 @@ extension UIImageView {
     }
 }
 
-/*
- DispatchQueue.global().async { [weak self] in
-     if let data = try? Data(contentsOf: URL(string: self!.productosTabla[indexPath.row].urlImagenes[0])!) {
-         if let image = UIImage(data: data) {
-             DispatchQueue.main.async {
-                 celda.imageView?.image = image
-             }
-         }
-     }
- }
- */
