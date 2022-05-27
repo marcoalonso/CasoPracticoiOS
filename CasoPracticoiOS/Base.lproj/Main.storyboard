@@ -44,29 +44,29 @@
                                             <action selector="verProductosBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghU-1O-RFD"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beats.fit.pro" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9cq-z0-wXz">
-                                        <rect key="frame" x="0.0" y="192.5" width="334" height="175.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cq-z0-wXz">
+                                        <rect key="frame" x="0.0" y="190" width="334" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="HFo-Zf-efg"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YLt-Xp-Mco">
-                                        <rect key="frame" x="0.0" y="380" width="334" height="111.5"/>
+                                        <rect key="frame" x="0.0" y="380" width="334" height="190"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Producto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR0-G5-JDP">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR0-G5-JDP">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12U-u9-8uV">
-                                                <rect key="frame" x="0.0" y="44" width="334" height="23.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12U-u9-8uV">
+                                                <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria: Tecnologia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bJ-ZU-KOv">
-                                                <rect key="frame" x="0.0" y="87.5" width="334" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bJ-ZU-KOv">
+                                                <rect key="frame" x="0.0" y="140" width="334" height="50"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCT-1y-M8c">
-                                        <rect key="frame" x="0.0" y="501.5" width="334" height="276.5"/>
+                                        <rect key="frame" x="0.0" y="580" width="334" height="198"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -89,8 +89,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jSN-id-lec" secondAttribute="bottom" constant="30" id="xMs-Fw-saZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Bd9-qK-wwO"/>
                     <connections>
-                        <segue destination="EzO-mf-TCo" kind="show" identifier="verProductos" id="Hq5-s0-2I1"/>
+                        <outlet property="categoriaProducto" destination="4bJ-ZU-KOv" id="mii-Dl-RVT"/>
+                        <outlet property="imagenProducto" destination="9cq-z0-wXz" id="5NR-ZQ-dn8"/>
+                        <outlet property="nombreProducto" destination="PR0-G5-JDP" id="RAO-gd-uTK"/>
+                        <outlet property="precioProducto" destination="12U-u9-8uV" id="9tE-IG-ahs"/>
+                        <segue destination="EzO-mf-TCo" kind="presentation" identifier="verProductos" modalPresentationStyle="fullScreen" id="Hq5-s0-2I1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,11 +107,11 @@
             <objects>
                 <viewController id="EzO-mf-TCo" customClass="ListaProductosViewController" customModule="CasoPracticoiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhd-Ok-aza">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-Zl-66g">
-                                <rect key="frame" x="5" y="64" width="404" height="748"/>
+                                <rect key="frame" x="5" y="64" width="404" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" textLabel="XYW-ei-9xE" detailTextLabel="LL7-nP-oeD" style="IBUITableViewCellStyleSubtitle" id="69H-sE-I8T">
@@ -148,16 +153,16 @@
                     <navigationItem key="navigationItem" id="p1s-dE-GRY"/>
                     <connections>
                         <outlet property="tablaProductos" destination="8dV-Zl-66g" id="mW1-Ho-vbb"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="verProductoDetalle" modalPresentationStyle="fullScreen" id="KB6-Hr-QVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vys-0O-Pip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776" y="85"/>
+            <point key="canvasLocation" x="935" y="80"/>
         </scene>
     </scenes>
     <resources>
         <image name="Elektra-Logo-2008" width="1042" height="642"/>
-        <image name="beats.fit.pro" catalog="system" width="128" height="65"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,11 +9,38 @@ import UIKit
 
 class DetalleProductoViewController: UIViewController {
     
+    var productoMostrar:  Productos?
     
-
+    @IBOutlet weak var categoriaProducto: UILabel!
+    @IBOutlet weak var precioProducto: UILabel!
+    @IBOutlet weak var nombreProducto: UILabel!
+    @IBOutlet weak var imagenProducto: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        nombreProducto.text = productoMostrar?.nombre ?? ""
+        if let precioProductoMostrar = productoMostrar?.precioRegular {
+            precioProducto.text = "Precio : $\(precioProductoMostrar)"
+        }
+        if let categoriaProductoMostrar = productoMostrar?.codigoCategoria {
+            categoriaProducto.text = "Categoria: \(categoriaProductoMostrar)"
+        }
+        
+        
+        if let urlImagen = productoMostrar?.urlImagenes.first {
+            imagenProducto.loadFrom(URLAddress: urlImagen)
+        }
+        
+        
+        
+        
+        
         
     }
     

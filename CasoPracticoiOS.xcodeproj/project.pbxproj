@@ -19,6 +19,7 @@
 		606AE1C1283F387100B8076B /* ProductoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AE1C0283F387100B8076B /* ProductoManager.swift */; };
 		606AE1C3283F3EC800B8076B /* DatosProducto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AE1C2283F3EC800B8076B /* DatosProducto.swift */; };
 		606AE1C5283F488800B8076B /* ModeloProducto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AE1C4283F488800B8076B /* ModeloProducto.swift */; };
+		60836A762841159A000E3D53 /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60836A752841159A000E3D53 /* UIImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		606AE1C0283F387100B8076B /* ProductoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoManager.swift; sourceTree = "<group>"; };
 		606AE1C2283F3EC800B8076B /* DatosProducto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosProducto.swift; sourceTree = "<group>"; };
 		606AE1C4283F488800B8076B /* ModeloProducto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloProducto.swift; sourceTree = "<group>"; };
+		60836A752841159A000E3D53 /* UIImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				606AE1C4283F488800B8076B /* ModeloProducto.swift */,
 				6062A45728403B5D003A7191 /* CeldaProductoTableViewCell.swift */,
 				6062A45828403B5D003A7191 /* CeldaProductoTableViewCell.xib */,
+				60836A752841159A000E3D53 /* UIImageHelper.swift */,
 			);
 			path = CasoPracticoiOS;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				606AE1BF283F371C00B8076B /* ListaProductosViewController.swift in Sources */,
 				606AE1C3283F3EC800B8076B /* DatosProducto.swift in Sources */,
 				606AE1C1283F387100B8076B /* ProductoManager.swift in Sources */,
+				60836A762841159A000E3D53 /* UIImageHelper.swift in Sources */,
 				606AE1AF283F344A00B8076B /* DetalleProductoViewController.swift in Sources */,
 				606AE1C5283F488800B8076B /* ModeloProducto.swift in Sources */,
 				606AE1AB283F344A00B8076B /* AppDelegate.swift in Sources */,

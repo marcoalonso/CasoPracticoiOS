@@ -13,6 +13,8 @@ class ListaProductosViewController: UIViewController {
     var productosTabla: [Productos] = []
     var productoManager = ProductoManager()
     
+    var productoSeleccioando: Productos?
+    
     // MARK: - IBOutlets
     @IBOutlet weak var tablaProductos: UITableView!
     
@@ -68,25 +70,35 @@ extension ListaProductosViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tablaProductos.deselectRow(at: indexPath, animated: true)
         
+        productoSeleccioando = productosTabla[indexPath.row]
+        print(productoSeleccioando!)
+        performSegue(withIdentifier: "verProductoDetalle", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "verProductoDetalle"{
+            let VCDetalleProducto = segue.destination as! DetalleProductoViewController
+            VCDetalleProducto.productoMostrar = productoSeleccioando
+        }
+    }
     
 }
 
-extension UIImageView {
-    func loadFrom(URLAddress: String) {
-        guard let url = URL(string: URLAddress) else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            if let imageData = try? Data(contentsOf: url) {
-                if let loadedImage = UIImage(data: imageData) {
-                        self?.image = loadedImage
-                }
-            }
-        }
-    }
-}
+//extension UIImageView {
+//    func loadFrom(URLAddress: String) {
+//        guard let url = URL(string: URLAddress) else {
+//            return
+//        }
+//        
+//        DispatchQueue.main.async { [weak self] in
+//            if let imageData = try? Data(contentsOf: url) {
+//                if let loadedImage = UIImage(data: imageData) {
+//                        self?.image = loadedImage
+//                }
+//            }
+//        }
+//    }
+//}
 
